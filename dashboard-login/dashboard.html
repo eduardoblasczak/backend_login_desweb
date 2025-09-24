@@ -9,16 +9,18 @@
     <button onclick="logout()">Sair</button>
 
     <script>
-        const usuario = localStorage.getItem("usuarioLogado");
+        const usuario = localStorage.getItem("usuarioLogado"); //pega do localstorage as informações do usuario 
 
         if (!usuario) {
             window.location.href = "../login-cadastro/login-cadastro.html";
-        } else {
+            //se o usuario não estiver logado, ou seja, localstorage vazio, redireciona o usuario para pagina de login  
+        } else { //se o usuario existir vai criar um objeto com a string tirada do localstorage, e então é passada para json
             const userObj = JSON.parse(usuario);
             document.getElementById("welcome").innerText = `Bem-vindo, ${userObj.name}!`;
+            //insere no h1 a mensagem de bem vindo e pega o nome do usuario
         }
 
-        function logout() {
+        function logout() { //vai apagar o usuariologado e então redirecionar para a página de login 
             localStorage.removeItem("usuarioLogado");
             window.location.href = "../login-cadastro/login-cadastro.html";
         }
