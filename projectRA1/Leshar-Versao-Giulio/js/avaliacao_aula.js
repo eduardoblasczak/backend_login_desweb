@@ -4,7 +4,7 @@ document.getElementById("salvar").addEventListener("click", function(){
 })
 
 function armazenarAvaliacao(){
-    var avaliacoes = JSON.parse(localStorage.getItem("avaliacoes"));
+    var avaliacoes = JSON.parse(localStorage.getItem("avaliacoes")) || [];
     var obj = {avaliacao:"", comentario:"", mentor:""};
     obj.avaliacao = document.getElementById("avaliacao").value;
     obj.comentario = document.getElementById("comentario").value;

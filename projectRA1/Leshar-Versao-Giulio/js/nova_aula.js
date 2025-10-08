@@ -4,7 +4,7 @@ document.getElementById("salvar").addEventListener("click", function(){
 });
 
 function armazenarAula(){
-    var aulas = JSON.parse(localStorage.getItem("aulas"));
+    var aulas = JSON.parse(localStorage.getItem("aulas")) || [];
     var obj = { titulo:"", descricao:"", data:"", horario:"" };
     obj.titulo = document.getElementById("titulo").value;
     obj.descricao = document.getElementById("descricao").value;

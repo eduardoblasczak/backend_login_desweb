@@ -4,7 +4,7 @@ document.getElementById("salvar").addEventListener("click", function(){
 });
 
 function armazenarPerfil(){
-    var perfil = JSON.parse(localStorage.getItem("perfil"));
+    var perfil = JSON.parse(localStorage.getItem("perfil")) || [];
     var obj = {nome:"", idade:"", biografia:""};
     obj.nome = document.getElementById("nome").value;
     obj.idade = document.getElementById("idade").value;
