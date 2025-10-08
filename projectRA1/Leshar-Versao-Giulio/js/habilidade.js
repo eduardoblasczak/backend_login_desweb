@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(!validaSessao()){
         window.location.href = "../index.html";
     }else{
+        
         carregarHabilidades();
     }
 });
@@ -28,6 +29,7 @@ function carregarHabilidades(){
         html += "<td>Habilidade</td>";
         html += "<td>Descrição</td>";
         html += "<td>Nível</td>";
+        html += "<td>Quantidade de Cursos</td>"
         html += "</tr>";
 
         for(var i=0; i<lista.length; i++){
@@ -36,13 +38,14 @@ function carregarHabilidades(){
             html += "<td>"+lista[i].habilidade+"</td>";
             html += "<td>"+lista[i].descricao+"</td>";
             html += "<td>"+lista[i].nivel+"</td>";
+            html += "<td>"+lista[i].cursos+"</td>";
             html += "</tr>";
         }
 
         html += "</table>";
         document.getElementById("lista").innerHTML = html;
     }else{
-        var obj = {habilidade: "habilidade", descricao: "descricao", nivel: "nivel"};
+        var obj = {habilidade: "habilidade", descricao: "descricao", nivel: "nivel", cursos: 0};
         var lista = [];
         lista.push(obj);
         localStorage.setItem("habilidades", JSON.stringify(lista));

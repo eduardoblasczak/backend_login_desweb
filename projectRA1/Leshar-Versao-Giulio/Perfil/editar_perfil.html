@@ -4,27 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
+    <link rel="stylesheet" href="../css/perfilEditar.css">
 </head>
 <body>
-    <div>
+    <aside class="sidebar">
+        <h1>LESHAR</h1>
+        <p class="menu-title"><a href="../home/index.html">Menu Principal</a></p>
+        <nav>
+            <ul>
+                <li><a href="../categoria/index.html">Categorias de Habilidades</a></li>
+                <li><a href="../habilidade/index.html">Habilidades</a></li>
+                <li><a href="../Perfil/index.html">Perfil</a></li>
+                <li><a href="../Aulas/index.html">Aulas</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="form-container">
+        
         <h1>Editar Dados Pessoais</h1>
-        <p>
-            <div>
+        
+        <form>
+            <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite o nome">
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
             </div>
-            <div>
+            
+            <div class="form-group">
                 <label for="idade">Idade</label>
-                <input type="number" id="idade" name="idade" placeholder="Digite a idade">
+                <input type="number" id="idade" name="idade" placeholder="Digite a idade" min="0" required>
             </div>
-            <div>
+            
+            <div class="form-group">
                 <label for="biografia">Biografia</label>
-                <input type="text" id="biografia" name="biografia" placeholder="Digite a biografia">
+                <textarea id="biografia" name="biografia" rows="4" placeholder="Fale um pouco sobre você..." required></textarea>
+                </div>
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <select name="sexo" id="sexo">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+                </div>
+            
+            
+        </form>
+        <div class="form-group">
+                <button id="salvar" type="submit" class="btn-salvar">Salvar Informações</button>
             </div>
-            <div>
-                <button id="salvar" type="button">Salvar Informações</button>
-            </div>
-        </p>
     </div>
     <script src="../js/editar_perfil.js"></script>
 </body>

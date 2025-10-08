@@ -24,18 +24,22 @@ function carregarPerfil(){
         var html="";
         html += "<table>";
         html += "<tr>";
-        html += "<td>#</td>";
+        html += "<td>Excluir</td>";
+        html += "<td>Editar</td>";
         html += "<td>Nome</td>";
         html += "<td>Idade</td>";
         html += "<td>Biografia</td>";
+        html += "<td>Sexo</td>";
         html += "</tr>";
 
         for(var i=0; i<lista.length; i++){
             html += "<tr>";
             html += "<td><a href='javascript:excluir("+i+")'>Excluir</a></td>";
+            html += "<td><a href='javascript:editar("+i+")'>Editar</a></td>";
             html += "<td>"+lista[i].nome+"</td>";
             html += "<td>"+lista[i].idade+"</td>";
             html += "<td>"+lista[i].biografia+"</td>";
+            html += "<td>"+lista[i].sexo+"</td>";
             html += "</tr>";
         }
         html += "</table>";
@@ -53,4 +57,8 @@ function excluir(id){
     perfil.splice(id, 1);
     localStorage.setItem("perfil", JSON.stringify(perfil));
     window.location.reload();
+}
+function editar(id){
+    localStorage.setItem("perfilEditar", id); // salva índice do perfil p editaar
+    window.location.href = "editar_perfil.html";
 }

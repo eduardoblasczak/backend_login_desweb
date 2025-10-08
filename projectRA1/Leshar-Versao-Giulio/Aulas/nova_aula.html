@@ -4,33 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Aula</title>
+    <link rel="stylesheet" href="../css/novaAula.css">
 </head>
 <body>
-    <div>
+    <aside class="sidebar">
+        <h1>LESHAR</h1>
+       <p class="menu-title"><a href="../home/index.html">Menu Principal</a></p>
+        <nav>
+            <ul>
+                <li><a href="../categoria/index.html">Categorias de Habilidades</a></li>
+                <li><a href="../habilidade/index.html">Habilidades</a></li>
+                <li><a href="../Perfil/index.html">Perfil</a></li>
+                <li><a href="../Aulas/index.html">Aulas</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="form-container">
+        
         <h1>Criar Nova Aula</h1>
-        <p>
-            <div>
+        
+        <form>
+            <div class="form-group">
                 <label for="titulo">Titulo da Aula</label>
-                <input type="text" id="titulo" name="titulo" placeholder="Digite o titulo da aula">
+                <input type="text" id="titulo" name="titulo" placeholder="Digite o titulo da aula" required>
             </div>
-            <div>
+            
+            <div class="form-group">
                 <label for="descricao">Descrição</label>
-                <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição da aula">
+                <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição da aula" required>
             </div>
-            <div>
+            
+            <div class="form-group">
                 <label for="data">Data</label>
-                <input type="date" id="data" name="data">
+                <input type="date" id="data" name="data" required>
             </div>
-            <div>
+            
+            <div class="form-group">
+                <input type="radio" id="presencial" name="formato" value="Presencial">
+                <label for="presencial">Presencial</label>
+                <input type="radio" name="formato" id="online" value="Online">
+                <label for="online">Online</label>
+                
+            </div>
+
+            <div class="form-group">
                 <label for="horario">Horário</label>
-                <input type="time" id="horario" name="horario">
+                <input type="time" id="horario" name="horario" required>
             </div>
-            <div>
-                <button id="salvar" type="button">Salvar Aula</button>
+            
+            
+        </form>
+        <div class="form-group">
+                <button id="salvar" type="submit" class="btn-salvar">Salvar Aula</button>
             </div>
-        </p>
     </div>
-    <script src="../js/nova_aula.js"></script>
     
+    <script src="../js/nova_aula.js"></script>
 </body>
 </html>

@@ -34,6 +34,7 @@ function carregarAulas(){
         html += "<td>Descrição</td>";
         html += "<td>Data</td>";
         html += "<td>Horário</td>";
+        html += "<td>Formato</td>";
         html += "</tr>";
 
         for(var i=0; i<lista.length; i++){
@@ -43,12 +44,13 @@ function carregarAulas(){
             html += "<td>"+lista[i].descricao+"</td>";
             html += "<td>"+lista[i].data+"</td>";
             html += "<td>"+lista[i].horario+"</td>";
+            html += "<td>"+lista[i].formato+"</td>";
             html += "</tr>";
         }
         html += "</table>";
         document.getElementById("lista").innerHTML = html;
     }else{
-        var obj = {titulo: "teste", descricao: "teste", data: "teste", horario: "teste"};
+        var obj = {titulo: "teste", descricao: "teste", data: "teste", horario: "teste", formato: "formato"};
         var lista = [];
         lista.push(obj);
         localStorage.setItem("aulas", JSON.stringify(lista));
@@ -62,17 +64,21 @@ function avaliarAulas(){
         var html = "";
         html += "<table>";
         html += "<tr>";
-        html += "<td>#</td>";
+        html += "<td>Excluir</td>";
+        html += "<td>Editar</td>";
         html += "<td>Avaliação</td>";
         html += "<td>Comentário</td>";
+        html += "<td>Formato</td>";
         html += "<td>Mentor</td>";
         html += "</tr>";
 
         for(var i=0; i<lista2.length; i++){
             html += "<tr>";
             html += "<td><a href='javascript:excluir2("+i+")'>Excluir</a></td>";
+            html += "<td><a href='javascript:editar2("+i+")'>Editar</a></td>";
             html += "<td>"+lista2[i].avaliacao+"</td>";
             html += "<td>"+lista2[i].comentario+"</td>";
+            html += "<td>"+lista2[i].formato+"</td>";
             html += "<td>"+lista2[i].mentor+"</td>";
             html += "</tr>";
         }
@@ -97,4 +103,10 @@ function excluir2(id){
     avaliacoes.splice(id, 1);
     localStorage.setItem("avaliacoes", JSON.stringify(avaliacoes));
     window.location.reload();
+}
+
+
+function editar2(id){
+      localStorage.setItem("avaliacaoEditar", id);
+      window.location.href = "avaliacao_aula.html";
 }

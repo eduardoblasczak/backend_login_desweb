@@ -20,15 +20,13 @@ body {
     background: var(--background);
     min-height: 100vh;
     display: flex;
-    /* Centraliza o conteúdo principal na página */
+    /* Centraliza o conteúdo principal vertical e horizontalmente */
     justify-content: center;
-    align-items: flex-start; 
+    align-items: center;
     padding: 3rem 1.5rem;
 }
 
 /* -------------------------------------------------------------------------------------- */
-
-
 
 /* Sidebar */
 .sidebar {
@@ -128,14 +126,15 @@ body {
     transform: translateX(0);
 }
 
-/* Container Principal da Lista de Perfis */
-.perfis-container {
+
+/* Container Principal do Formulário */
+.form-container {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     padding: 3rem;
     border-radius: 20px;
     box-shadow: var(--container-shadow);
-    max-width: 900px;
+    max-width: 550px; /* Tamanho ideal para formulários de criação */
     width: 100%;
     animation: fadeIn 0.6s ease;
 }
@@ -151,9 +150,9 @@ body {
     }
 }
 
-.perfis-container h1 {
+.form-container h1 {
     color: var(--primary-color);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
     font-weight: 700;
     text-align: center;
@@ -161,100 +160,85 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* -------------------------------------------------------------------------------------- */
-
-/* Estilo para a área do botão e título */
-.header-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+/* Estilo para cada grupo de campo (label + input) */
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
-.header-area h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    border-bottom: none; /* Remove a borda dupla */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #444;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+/* Estilo para todos os campos de entrada de texto, data e hora */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
 
-/* Estilo do Botão "Criar Perfil" */
-.btn-novo {
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus {
+    border-color: var(--primary-color);
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 175, 131, 0.2);
+}
+
+/* Estilo do Botão "Salvar Aula" */
+.btn-salvar {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 2rem;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Botão em largura total */
+    margin-top: 2rem;
 }
 
-.btn-novo:hover {
+.btn-salvar:hover {
     background-color: var(--primary-hover-color);
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.btn-novo:active {
+.btn-salvar:active {
     transform: translateY(0);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* -------------------------------------------------------------------------------------- */
-
-/* Estilo para a Lista de Perfis */
-#lista {
-    display: grid;
-    gap: 1.5rem;
-    /* Layout de grid para os perfis */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    padding-top: 1rem;
-}
-
-/* Exemplo de Estilo para um Item de Perfil */
-.perfil-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.perfil-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-hover-color);
-}
-
-/* -------------------------------------------------------------------------------------- */
-
 /* Responsividade */
-@media (max-width: 768px) {
-    .perfis-container {
-        padding: 2rem;
+@media (max-width: 576px) {
+    .form-container {
+        padding: 1.5rem;
     }
 
-    .header-area {
-        flex-direction: column;
-        align-items: flex-start;
+    .form-container h1 {
+        font-size: 1.5rem;
     }
 
-    .header-area h1 {
-        margin-bottom: 1rem;
-        text-align: left;
-    }
-
-    .perfis-container > h1 { /* Título principal */
-        font-size: 1.8rem;
-    }
-
-    #lista {
-        grid-template-columns: 1fr;
+    .form-group input[type="text"],
+    .form-group input[type="date"],
+    .form-group input[type="time"] {
+        padding: 0.6rem 0.8rem;
     }
 }

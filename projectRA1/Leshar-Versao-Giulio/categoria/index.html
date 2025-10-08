@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
+    <link rel="stylesheet" href="../css/categoria.css"> 
 </head>
 <body>
+    <aside class="sidebar">
+        <h1>LESHAR</h1>
+        <p class="menu-title"><a href="../home/index.html">Menu Principal</a></p>
+        <nav>
+            <ul>
+                <li><a href="../categoria/index.html">Categorias de Habilidades</a></li>
+                <li><a href="../habilidade/index.html">Habilidades</a></li>
+                <li><a href="../Perfil/index.html">Perfil</a></li>
+                <li><a href="../Aulas/index.html">Aulas</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="categorias-container">
+        
+        <h1>Lista de Categorias para Habilidades</h1>
+        
+        <div>
+            <button id="novo" type="button" class="btn-novo">+ Categoria</button>
+        </div>
+        
+        <div>
+            <div id="lista">
+                </div>
+        </div>
+    </div>
     
-    <h1>Lista de Categorias para Habilidades</h1>
-    <div>
-        <button id="novo" type="button">+ Categoria</button>
-    </div>
-    <div>
-        <div id="lista"></div>
-    </div>
     <script src="../js/categorias.js"></script>
-    
 </body>
 </html>
