@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Habilidade</title>
+    <link rel="stylesheet" href="../css/habilidadeNova.css">
+</head>
+<body>
+
+<aside class="sidebar">
+        <h1>LESHAR</h1>
+        <p class="menu-title"><a href="../home/index.html">Menu Principal</a></p>
+        <nav>
+            <ul>
+                <li><a href="../categoria/index.html">Categorias de Habilidades</a></li>
+                <li><a href="../habilidade/index.html">Habilidades</a></li>
+                <li><a href="../Perfil/index.html">Perfil</a></li>
+                <li><a href="../Aulas/index.html">Aulas</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="form-container">
+        
+        <h1>Nova Habilidade</h1>
+        
+        <form>
+            <div class="form-group">
+                <label for="habilidade">Habilidade</label>
+                <input type="text" id="habilidade" name="habilidade" placeholder="Digite a habilidade" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva sobre essa habilidade" required></textarea> 
+            </div>
+            
+            <div class="form-group">
+                <label for="nivel">Nível</label>
+                <select id="nivel" name="nivel" required>
+                    <option value="" disabled selected>Selecione o nível</option>
+                    <option value="Iniciante">Iniciante</option>
+                    <option value="Intermediário">Intermediário</option>
+                    <option value="Avançado">Avançado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Quantidade de cursos na área</label>
+                <input type="number" name="cursos" id="cursos">
+            </div>
+
+           
+        </form>
+         <div class="form-group">
+                <button id="salvar" type="submit" class="btn-salvar">Salvar</button>
+            </div>
+    </div>
+    <script src="../js/habilidade/criar_habilidade.js"></script>
+</body>
+</html>
