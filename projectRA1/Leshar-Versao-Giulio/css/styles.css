@@ -192,3 +192,48 @@ h2 {
 .resultado.parcial {
     color: #F9D83C;
 }
+/* 
+RADIO
+<div>
+    <label for="dominio">Possui Domínio</label>
+    <input type="radio" id="dominio" name="dominio" value="sim">Sim
+    <input type="radio" id="dominio" name="dominio" value="nao">Não
+ </div>
+
+SELECT
+<div>
+    <label for="dificuldade">Dificuldade</label>
+    <select id="dificuldade" name="dificuldade">
+        <option value="Fácil">Fácil</option>
+        <option value="Médio">Médio</option>
+        <option value="Difícil">Difícil</option>
+    </select>
+</div>
+
+CHECKBOX
+<div>
+    <label>Recursos necessários</label><br>
+    <input type="checkbox" id="reccomputador" name="recurso" value="Computador">
+    <label for="reccomputador">Computador</label><br>
+
+    <input type="checkbox" id="recwebcam" name="recurso" value="Webcam">
+    <label for="recwebcam">Webcam</label><br>
+
+    <input type="checkbox" id="recvscode" name="recurso" value="Vscode">
+    <label for="recvscode">Visual Studio Code</label><br>
+</div>
+JS1:
+obj.dificuldade = document.getElementById("dificuldade").value;
+    const recursosSelecionados = document.querySelectorAll('input[name="recurso"]:checked');
+    recursosSelecionados.forEach(function(checkbox) {
+        obj.recursos.push(checkbox.value);
+    });
+JS2:
+const recursosSelecionados = document.querySelectorAll('input[name="recurso"]:checked');
+    recursosSelecionados.forEach(function(checkbox) {
+        obj.recursos.push(checkbox.value);
+    });
+TEXT
+<label for="nome">Nome:</label>
+<input type="text" id="nome" name="nome">
+*/

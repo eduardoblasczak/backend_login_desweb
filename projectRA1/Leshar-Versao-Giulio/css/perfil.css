@@ -258,3 +258,30 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/*
+<div class="form-group">
+                <label>Selecione o que você gosta na Leshar:</label><br>
+                <input type="checkbox" id="DarAulas" name="opiniao" value="Dar Aulas">
+                <label for="DarAulas">Ensinar para Pessoas</label><br>
+
+                <input type="checkbox" id="AprenderHabilidades" name="opiniao" value="AprenderHabilidades">
+                <label for="AprenderHabilidades">Aprender novas Habilidades</label><br>
+
+                <input type="checkbox" id="ConhecerPessoas" name="opiniao" value="ConhecerPessoas">
+                <label for="ConhecerPessoas">Conhecer Pessoas</label><br>
+            </div>
+
+JS
+perfil.js
+html += "<td>Opinião</td>";
+html += "<td>"+lista[i].opiniao+"</td>";
+
+editar.js
+obj.opiniao = [];
+    
+    document.getElementsByName("opiniao").forEach((cb => {
+        if(cb.checked){
+            obj.opiniao.push(cb.value);
+        }
+    }))

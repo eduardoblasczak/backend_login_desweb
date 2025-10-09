@@ -12,13 +12,12 @@ function armazenarPerfil(){
     var perfil = JSON.parse(localStorage.getItem("perfil")) || [];
     var id = localStorage.getItem("perfilEditar");
 
-    var obj = {nome:"", idade:"", biografia:""};
+    var obj = {};
     obj.nome = document.getElementById("nome").value;
     obj.idade = document.getElementById("idade").value;
     obj.biografia = document.getElementById("biografia").value;
     obj.sexo = document.getElementById("sexo").value;
 
-    
     if(id !== null){ // se tiver id, edita
         perfil[id] = obj;
         localStorage.removeItem("perfilEditar"); // limpa o índice
