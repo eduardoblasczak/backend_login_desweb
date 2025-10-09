@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
     if(!validaSessao()){
         window.location.href = "../index.html";
@@ -24,7 +26,8 @@ function carregarCategorias(){
         var html = "";
         html += "<table>";
         html += "<tr>";
-        html += "<td>#</td>";
+        html += "<td>Excluir</td>";
+        html += "<td>Editar</td>";
         html += "<td>Nome da Categoria</td>";
         html += "<td>Prioridade</td>";
         html += "<td>Data de Criação</td>";
@@ -33,6 +36,7 @@ function carregarCategorias(){
         for(var i=0; i<lista.length; i++){
             html += "<tr>";
             html += "<td><a href='javascript:excluir("+i+")'>Excluir</a></td>";
+            html += "<td><a href='javascript:editar("+i+")'>Editar</a></td>";
             html += "<td>"+lista[i].nome+"</td>";
             html += "<td>"+lista[i].prioridade+"</td>";
             html += "<td>"+lista[i].dataCriacao+"</td>";
@@ -42,8 +46,7 @@ function carregarCategorias(){
         document.getElementById("lista").innerHTML = html;
         }else{
             var obj = {nome: "categoria", prioridade:"3", dataCriacao: "2025-09-10"};
-            var lista = [];
-            lista.push(obj);
+            var lista = [obj];
             localStorage.setItem("categorias", JSON.stringify(lista));
             window.location.reload();
         }
@@ -54,12 +57,11 @@ function excluir(id){
     localStorage.setItem("categorias", JSON.stringify(categorias));
     window.location.reload();
 }
-/*
+
 function editar(id){
-    var categorias = JSON.parse(localStorage.getItem("categorias"));
-    categorias.splice(id, 1);
-    localStorage.setItem("categorias", JSON.stringify(categorias));
+    localStorage.setItem("categoriaEditar", id);
     window.location.href = "nova_categoria.html";
-    window.location.reload();
 }
-*/
+
+window.editar = editar;
+window.excluir = excluir;

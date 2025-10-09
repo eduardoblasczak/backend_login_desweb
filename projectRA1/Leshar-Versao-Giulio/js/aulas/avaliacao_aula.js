@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     carregarAvaliacaoParaEdicao();
 });
 
-document.getElementById("salvar").addEventListener("click", function(e){
-    e.preventDefault(); // evita reload automático
+document.getElementById("salvar").addEventListener("click", function(){
     armazenarAvaliacao();
     window.location.href = "index.html";
 });

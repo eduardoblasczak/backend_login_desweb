@@ -29,7 +29,8 @@ function carregarAulas(){
         var html = "";
         html += "<table>";
         html += "<tr>";
-        html += "<td>#</td>";
+        html += "<td>Excluir</td>";
+        html += "<td>Editar</td>";
         html += "<td>Título</td>";
         html += "<td>Descrição</td>";
         html += "<td>Data</td>";
@@ -40,6 +41,7 @@ function carregarAulas(){
         for(var i=0; i<lista.length; i++){
             html += "<tr>";
             html += "<td><a href='javascript:excluir("+i+")'>Excluir</a></td>";
+            html += "<td><a href='javascript:editar("+i+")'>Editar</a></td>";
             html += "<td>"+lista[i].titulo+"</td>";
             html += "<td>"+lista[i].descricao+"</td>";
             html += "<td>"+lista[i].data+"</td>";
@@ -105,6 +107,10 @@ function excluir2(id){
     window.location.reload();
 }
 
+function editar(id){
+      localStorage.setItem("aulaEditar", id);
+      window.location.href = "nova_aula.html";
+}
 
 function editar2(id){
       localStorage.setItem("avaliacaoEditar", id);
